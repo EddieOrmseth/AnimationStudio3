@@ -31,7 +31,7 @@ public class Studio extends JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent e) {
-                System.out.println("Final Animation: \n" + animation);
+                System.out.println("Final Animation: \n" + getAnimation());
             }
         });
 
@@ -39,6 +39,8 @@ public class Studio extends JFrame {
     }
 
     private void initialize(Animation animation, Renderer renderer) {
+        this.animation = animation;
+        this.renderer = renderer;
 
         frameButtonBoard = new FrameButtonBoard(animation, renderer, this);
         frameButtonBoard.setLocation(20, 20);
@@ -69,6 +71,10 @@ public class Studio extends JFrame {
     public void update() {
         jointDisplayManager.update();
         repaint();
+    }
+
+    private Animation getAnimation() {
+        return animation;
     }
 
     @Override
