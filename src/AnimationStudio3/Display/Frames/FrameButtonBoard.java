@@ -106,7 +106,7 @@ public class FrameButtonBoard extends JComponent {
     public void reflectFromFrameButton(FrameButton frameButton) {
         int frameButtonIndex = getFrameButtonIndex(frameButton);
         PDouble newTime = frameButton.getTimeToFrame();
-        AnimationData newData = renderer.getReflectedData(frameButton.getFrame());
+        AnimationData newData = renderer.getFlipRightAndLeftData(frameButton.getFrame());
         JointDisplay newJointDisplay = renderer.getJointDisplayFor(newData);
 
         setNewFrameButtonInfo(frameButtonIndex, newData, newTime, newJointDisplay);

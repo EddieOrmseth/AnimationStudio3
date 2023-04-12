@@ -49,11 +49,11 @@ public abstract class Renderer extends JComponent {
         return new Point((int) (magnitude * Math.cos(theta)), (int) (magnitude * Math.sin(theta)));
     }
 
-    public AnimationData getReflectedData(AnimationData data) {
-        return reflectData(data.clone());
+    public AnimationData getFlipRightAndLeftData(AnimationData data) {
+        return flipRightAndLeft(data.clone());
     }
 
-    protected AnimationData reflectData(AnimationData data) {
+    protected AnimationData flipRightAndLeft(AnimationData data) {
         return null;
     }
 

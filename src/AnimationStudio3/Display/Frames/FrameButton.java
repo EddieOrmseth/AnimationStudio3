@@ -25,7 +25,7 @@ public class FrameButton extends JComponent {
     private JButton shiftRight;
     private JButton setLeft;
     private JButton setRight;
-    private JButton reflect;
+    private JButton flip;
     private JButton deleteButton;
     private JLabel timeLabel;
     private JTextField timeInput;
@@ -43,7 +43,7 @@ public class FrameButton extends JComponent {
         shiftRight = new JButton("=>");
         setLeft = new JButton("L");
         setRight = new JButton("R");
-        reflect = new JButton("Reflect");
+        flip = new JButton("Flip LR");
         deleteButton = new JButton("delete");
         timeLabel = new JLabel("Time: ");
         timeInput = new JTextField("" + timeToFrame.val);
@@ -109,14 +109,14 @@ public class FrameButton extends JComponent {
 
         yVal += Height;
 
-        reflect.setBounds(0, yVal, Width, Height);
-        reflect.addMouseListener(new LazyMouseListener() {
+        flip.setBounds(0, yVal, Width, Height);
+        flip.addMouseListener(new LazyMouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 frameButtonBoard.reflectFromFrameButton(frameButton);
             }
         });
-        add(reflect);
+        add(flip);
 
         yVal += Height;
 

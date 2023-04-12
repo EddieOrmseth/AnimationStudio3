@@ -200,7 +200,7 @@ public class StickPerson extends Renderer {
         return jointDisplay;
     }
 
-    public AnimationData reflectData(AnimationData data) {
+    public AnimationData flipRightAndLeft(AnimationData data) {
         swap(data, BodyInfoToIndex(BodyInfo.HipToLeftKneeAngle), BodyInfoToIndex(BodyInfo.HipToRightKneeAngle));
         swap(data, BodyInfoToIndex(BodyInfo.LeftKneeToLeftFootAngle), BodyInfoToIndex(BodyInfo.RightKneeToRightFootAngle));
         swap(data, BodyInfoToIndex(BodyInfo.ShoulderToLeftElbowAngle), BodyInfoToIndex(BodyInfo.ShoulderToRightElbowAngle));
