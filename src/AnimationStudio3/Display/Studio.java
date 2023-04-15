@@ -73,7 +73,7 @@ public class Studio extends JFrame {
         repaint();
     }
 
-    private Animation getAnimation() {
+    public Animation getAnimation() {
         return animation;
     }
 

@@ -5,7 +5,6 @@ import AnimationStudio3.Display.LazyMouseListener;
 import AnimationStudio3.Display.Studio;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -67,7 +66,7 @@ public class AnimationButtonBoard extends JComponent {
                 int retVal = fileChooser.showSaveDialog(null);
                 if (retVal == JFileChooser.APPROVE_OPTION) {
                     File file = fileChooser.getSelectedFile();
-                    file = new File(file.getAbsolutePath() + extension);
+                    file = new File(file.getAbsolutePath() + (file.getAbsolutePath().endsWith(extension) ? "" : extension));
                     try {
                         FileOutputStream outputStream = new FileOutputStream(file);
                         String string = animation.toString();
@@ -97,6 +96,7 @@ public class AnimationButtonBoard extends JComponent {
 
                         Animation newAnimation = Animation.fromString(string);
 //                        newAnimation.timeScale(.1);
+                        System.out.println("Current Animation: \n" + studio.getAnimation());
                         studio.reinitialize(newAnimation);
                     } catch (Exception exception) {
                         return;
